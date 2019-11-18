@@ -9,8 +9,7 @@ package edu.eci.cvds.managedbeans;
  *
  * @author David Herrera
  */
-import edu.eci.cvds.entities.Elemento;
-import edu.eci.cvds.entities.ElementoTipo;
+import edu.eci.cvds.entities.Recurso;
 import edu.eci.cvds.services.BibliotecaServices;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.BibliotecaServicesFactory;
@@ -26,14 +25,14 @@ import java.io.Serializable;
 
 @ManagedBean(name = "ElementoBean")
 @ViewScoped
-public class ElementoBean implements Serializable{
+public class RecursoBean implements Serializable{
     
     public static final Logger log = LoggerFactory.getLogger(BasePageBean.class);
     
     private BibliotecaServices bibliotecaServices;
     
     private String nombre;
-    private ElementoTipo tipo;
+    private String tipo;
     private String ubicacion;
     private int id;
     private int capacidad;
@@ -41,7 +40,7 @@ public class ElementoBean implements Serializable{
     private boolean averiado;
 
     
-    public ElementoBean(){
+    public RecursoBean(){
         bibliotecaServices = BibliotecaServicesFactory.getInstance().getBibliotecaServices();
     }
     public String getNombre(){
@@ -50,10 +49,10 @@ public class ElementoBean implements Serializable{
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
-    public ElementoTipo getTipo(){
+    public String getTipo(){
         return tipo;
     }
-    public void setTipo(ElementoTipo tipo){
+    public void setTipo(String tipo){
         this.tipo = tipo;
     }
     public String getUbicacion(){
@@ -77,8 +76,8 @@ public class ElementoBean implements Serializable{
     
     public void registrarElemento(){
         try{
-            Elemento elemento = new Elemento(id, disponible, averiado, ubicacion, nombre, capacidad,tipo);
-            bibliotecaServices.insertarElemento(elemento);
+            Recurso recurso = new Recurso(id, disponible, averiado, ubicacion, nombre, capacidad,tipo);
+            bibliotecaServices.insertarRecurso(recurso);
         }catch(ServicesException e){
             facesError(e.getMessage());
         }

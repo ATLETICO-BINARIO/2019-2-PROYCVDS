@@ -20,12 +20,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import edu.eci.cvds.entities.Elemento;
+import edu.eci.cvds.entities.Recurso;
 
-public interface ElementoMapper {
+public interface RecursoMapper {
 
-    public List<Elemento> getElementos();
-    public void insertElemento(@Param("elemento") Elemento elemento);
+    public List<Recurso> getRecursos();
+    public void insertRecurso(@Param("recurso") Recurso recurso);
     
 
 }

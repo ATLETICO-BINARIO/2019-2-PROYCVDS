@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cvds.entities;
+package edu.eci.cvds.persistence;
 
 /**
  *
- * @author David Herrera
+ * @author User
  */
-public enum ElementoTipo {
-    COMPUTADOR,SALAESTUDIO,TEXTO,PORTATIL,CD
+public interface ReservaDAO {
+    
 }

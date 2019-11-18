@@ -7,7 +7,7 @@
     </properties>
 
     <typeAliases>
-        <typeAlias type='edu.eci.cvds.entities.Elemento' alias='Elemento'/>
+        <typeAlias type='edu.eci.cvds.entities.Recurso' alias='Recurso'/>
         <typeAlias type='edu.eci.cvds.entities.Usuario' alias='Usuario'/>
     </typeAliases>
 
@@ -25,7 +25,10 @@
     </environments>
 
     <mappers>
-        <mapper resource="mappers/ElementoMapper.xml"></mapper>    
+        <mapper resource="mappers/RecuroMapper.xml"></mapper>
+        <mapper resource="mappers/ReservaMapper.xml"></mapper>
+        <mapper resource="mappers/UsuarioMapper.xml"></mapper>
+        <mapper resource="mappers/RollMapper.xml"></mapper>    
     </mappers> 
         
         

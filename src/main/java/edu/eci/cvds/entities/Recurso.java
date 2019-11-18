@@ -1,7 +1,7 @@
 package edu.eci.cvds.entities;
 
 
-public class Elemento {
+public class Recurso {
     
     private int id;
     private boolean averiado;
@@ -9,11 +9,11 @@ public class Elemento {
     private boolean disponible;
     private String nombre;
     private int capacidad;
-    private ElementoTipo tipo;
+    private String tipo;
     
     
     
-    public Elemento(int id, boolean disponible,boolean averiado, String ubicacion, String nombre, int capacidad, ElementoTipo tipo) {
+    public Recurso(int id, boolean disponible,boolean averiado, String ubicacion, String nombre, int capacidad, String tipo) {
             super();
             this.id = id;
             this.ubicacion = ubicacion;
@@ -72,10 +72,10 @@ public class Elemento {
         public void setCapacidad(int capacidad){
             this.capacidad = capacidad;
         }
-        public ElementoTipo getElementoTipo(){
+        public String getElementoTipo(){
             return tipo;
         }
-        public void setElementoTipo(ElementoTipo tipo){
+        public void setElementoTipo(String tipo){
             this.tipo = tipo;
         }
 

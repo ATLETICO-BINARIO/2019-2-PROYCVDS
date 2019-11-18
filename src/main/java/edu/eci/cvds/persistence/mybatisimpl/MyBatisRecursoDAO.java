@@ -4,34 +4,34 @@ package edu.eci.cvds.persistence.mybatisimpl;
 
 import com.google.inject.Inject;
 
-import edu.eci.cvds.entities.Elemento;
-import edu.eci.cvds.persistence.ElementoDAO;
+import edu.eci.cvds.entities.Recurso;
+import edu.eci.cvds.persistence.RecursoDAO;
 import edu.eci.cvds.persistence.PersistenceException;
-import edu.eci.cvds.persistence.mybatisimpl.mappers.ElementoMapper;
+import edu.eci.cvds.persistence.mybatisimpl.mappers.RecursoMapper;
 import java.util.List;
 
 
 
-public class MyBatisElementoDAO implements ElementoDAO {
+public class MyBatisRecursoDAO implements RecursoDAO {
 
 	@Inject
-	ElementoMapper elementoMapper;
+	RecursoMapper elementoMapper;
 
     
 
     @Override
-    public List<Elemento> loadAll() throws PersistenceException {
+    public List<Recurso> loadAll() throws PersistenceException {
         try{   
-            return elementoMapper.getElementos();
+            return elementoMapper.getRecursos();
         }catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Problemas con la busqueda de los elementos",e);
         }
     }
 
     @Override
-    public void save(Elemento b) throws PersistenceException {
+    public void save(Recurso b) throws PersistenceException {
         try{
-            elementoMapper.insertElemento(b);
+            elementoMapper.insertRecurso(b);
         }catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Problemas con el elemento a insertar",e);
         }
