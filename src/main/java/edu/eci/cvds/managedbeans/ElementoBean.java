@@ -10,7 +10,7 @@ package edu.eci.cvds.managedbeans;
  * @author David Herrera
  */
 import edu.eci.cvds.entities.Elemento;
-import edu.eci.cvds.entities.ElementoTipo;
+import edu.eci.cvds.entities.Recurso;
 import edu.eci.cvds.services.BibliotecaServices;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.BibliotecaServicesFactory;
@@ -33,10 +33,9 @@ public class ElementoBean implements Serializable{
     private BibliotecaServices bibliotecaServices;
     
     private String nombre;
-    private ElementoTipo tipo;
+    //private ElementoTipo tipo;
     private String ubicacion;
     private int id;
-    private int capacidad;
     private boolean disponible;
     private boolean averiado;
 
@@ -50,12 +49,14 @@ public class ElementoBean implements Serializable{
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
+    /*
     public ElementoTipo getTipo(){
         return tipo;
     }
     public void setTipo(ElementoTipo tipo){
         this.tipo = tipo;
     }
+    */
     public String getUbicacion(){
         return ubicacion;
     }
@@ -68,20 +69,22 @@ public class ElementoBean implements Serializable{
     public void setId(int identificador){
         this.id = identificador;
     }
-    public int getCapacidad(){
-        return capacidad;
-    }
-    public void setCapacidad(int capacidad){
-        this.capacidad = capacidad;
-    }
     
+    /*
+    public ElementoTipo[] recursoTipos(){
+        return ElementoTipo.values();
+    }
+    */
     public void registrarElemento(){
+        /*
         try{
-            Elemento elemento = new Elemento(id, disponible, averiado, ubicacion, nombre, capacidad,tipo);
-            bibliotecaServices.insertarElemento(elemento);
+            //Elemento elemento = new Elemento(id, disponible, ubicacion, nombre,tipo);
+            //Recurso elemento = new Recurso(id, true,disponible, ubicacion, nombre,tipo);
+            bibliotecaServices.insertarRecurso(elemento);
         }catch(ServicesException e){
             facesError(e.getMessage());
         }
+        */
     }
     
     private void facesError(String message) {
