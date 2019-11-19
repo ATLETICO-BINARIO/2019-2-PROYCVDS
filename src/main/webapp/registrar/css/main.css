@@ -472,3 +472,14 @@ input {
     width: 30%;
     height: 40px;
 }
+
+.card-2{
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  
+}
