@@ -30,18 +30,54 @@
 
 <body>
     <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
-        <div class="wrapper wrapper--w680" style="width: 100%">
-            <div class="card-2 card-1" >
+        <div class="wrapper wrapper--w680">
+            <center>
+                
+                <div class="card-2 card-1" >
                 <div class="card-heading "></div>
                 <div class="card-body" >
                     <h2 class="title">Consultar Recursos</h2>
-                    
-                    <p:inputText class="input--style-1" type="text" placeholder="Identificador" required="true" style="width: 100%" />
-                        
-                        
-                    
+                   
+                    <div class="container">
+                        <center>
+                            <h:form id="form">
+                                    <p:dataTable id="recursosTable" value="#{recursoBean.recursosList}" var="rec" widgetVar="recTable"
+                                                 rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                                                 sortMode="multiple" paginatorPosition="bottom">
+                                        <p:column style="column-width: 50em;" headerText="Id" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                        <p:column headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="">
+                                            <f:facet name="filter">
+                                                <p:selectOneMenu onchange="" styleClass="custom-filter">
+                                                    <f:selectItem itemLabel="Seleccionar" itemValue="" noSelectionOption="true" />
+                                                    <f:selectItems value=""/>
+                                                </p:selectOneMenu>
+                                            </f:facet>
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                        <p:column headerText="Nombre" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                        <p:column headerText="Ubicacion" sortBy="" filterBy="" filterMatchMode="exact">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                        <p:column headerText="Capacidad" sortBy="" filterBy="" filterMatchMode="exact">
+                                            <h:outputText value=""/>
+                                        </p:column>
+
+                                        <p:column headerText="estado" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                    </p:dataTable>
+                            </h:form>
+                        </center>
+                    </div>
                 </div>
             </div>
+                
+            </center>
+            
         </div>
     </div>
 

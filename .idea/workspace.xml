@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67a3eeb1-98b7-456e-90e7-290cd6c69fa0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login/newxhtml.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrar.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registrar/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registrar/css/main.css" afterDir="false" />
-    </list>
+    <list default="true" id="e22639bf-65a3-4ee5-a25a-a8fd6e9db508" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,16 +15,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/entities/Elemento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+            <state relative-caret-position="204">
+              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="260" />
@@ -43,7 +34,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -90,7 +81,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -113,11 +104,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="67a3eeb1-98b7-456e-90e7-290cd6c69fa0" name="Default Changelist" comment="" />
-      <created>1574185039707</created>
+      <changelist id="e22639bf-65a3-4ee5-a25a-a8fd6e9db508" name="Default Changelist" comment="" />
+      <created>1574204133994</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574185039707</updated>
+      <updated>1574204133994</updated>
     </task>
     <servers />
   </component>
@@ -154,8 +145,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/entities/Elemento.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+        <state relative-caret-position="204">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
