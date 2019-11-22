@@ -23,7 +23,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
-import java.util.List;
 
 
 @ManagedBean(name = "recursoBean")
@@ -41,22 +40,11 @@ public class RecursoBean implements Serializable{
     private int capacidad;
     private boolean disponible;
     private boolean averiado;
-    private List<Recurso> recursosList;
 
     
     public RecursoBean(){
         bibliotecaServices = BibliotecaServicesFactory.getInstance().getBibliotecaServices();
     }
-    
-    public List<Recurso> getRecursosList() {
-        recursosList = consultarRecursos();
-        return recursosList;
-    }
-
-    public void setRecursoList(List<Recurso> recursosList) {
-        this.recursosList = recursosList;
-    }
-    
     public String getNombre(){
         return nombre;
     }
@@ -101,18 +89,6 @@ public class RecursoBean implements Serializable{
         }catch(ServicesException e){
             facesError(e.getMessage());
         }
-    }
-    
-    public List<Recurso> consultarRecursos(){
-        List<Recurso> recs = null;
-        try {
-            recs = bibliotecaServices.buscarRecurso();
-
-            facesError("Consulta exitosa");
-        }catch (ServicesException e) {
-            facesError(e.getMessage());
-        }
-        return recs;
     }
     
     private void facesError(String message) {
