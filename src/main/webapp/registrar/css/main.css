@@ -184,7 +184,7 @@ h6 {
 }
 
 .wrapper--w680 {
-  max-width: 1250px;
+  max-width: 680px;
 }
 
 /* ==========================================================================
@@ -447,7 +447,7 @@ input {
 
 .card-1 .card-heading {
   background: url("../images/biblioteca.jpg") center center/cover no-repeat;
-  padding-top: 270px;
+  padding-top: 210px;
 }
 
 .card-1 .card-body {

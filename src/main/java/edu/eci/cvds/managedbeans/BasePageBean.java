@@ -40,7 +40,7 @@ public class BasePageBean implements Serializable{
      private Boolean rememberMe;    
    
     
-    public void doLogin() {
+    public void doLogin(String tipo) {
             System.out.println("entramos ...");
             Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
 	    SecurityManager securityManager = factory.getInstance();
@@ -53,7 +53,14 @@ public class BasePageBean implements Serializable{
                     UsernamePasswordToken token = new UsernamePasswordToken(getCorreo(), getPassword());
                     currentUser.login(token);
                     currentUser.getSession().setAttribute("correo",correo);
-                    FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/menu.html");
+                    
+                    if(currentUser.hasRole("admin")){
+                    
+                        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/menu.html");
+                    }
+                    else{
+                        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/menu-usuario.html");
+                    }
                 }
                catch (UnknownAccountException ex) {
                    facesError("Unknown account", ex);
@@ -70,8 +77,13 @@ public class BasePageBean implements Serializable{
                catch (AuthenticationException | IOException | UnavailableSecurityManagerException ex) {
                    facesError("Unknown error: " + ex.getMessage(), ex);
                    log.error(ex.getMessage(), ex);
+                   
                } 
             }
+            else{
+                System.out.println("esta en sesion");
+            }
+                
             
     }
 
