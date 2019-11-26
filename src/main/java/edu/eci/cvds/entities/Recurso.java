@@ -11,7 +11,12 @@ public class Recurso {
     private int capacidad;
     private String tipo;
     
-    
+    //Probando despliegue
+    //Probando despliegue
+    //Probando despliegue
+    //Probando despliegue
+    //Probando despliegue
+    //Probando despliegue
     
     public Recurso(int id, boolean disponible,boolean averiado, String ubicacion, String nombre, int capacidad, String tipo) {
             super();
