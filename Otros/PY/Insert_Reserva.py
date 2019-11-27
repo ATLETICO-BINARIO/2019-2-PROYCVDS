@@ -1,4 +1,3 @@
-import random as r
 from random import randrange
 from datetime import timedelta
 from datetime import datetime
@@ -18,11 +17,6 @@ def random_date(start, end):
 d1 = datetime.strptime('12/15/2018 1:30 PM', '%m/%d/%Y %I:%M %p')
 d2 = datetime.strptime('12/15/2019 4:50 AM', '%m/%d/%Y %I:%M %p')
 
-
-
-ubicacion = ["edificio F", "edificio H", "edificio B", "edificio A","edificio C"]
-tipo_r = ["computador","sala de estudio","libro"]
-ru =[]
 recurso=[105, 116, 102, 113, 125, 121, 103, 107, 114, 104, 108, 124, 118, 117, 111, 122, 123, 112, 127, 119]
 
 for i in range(5,30):
@@ -46,5 +40,3 @@ for i in range(5,30):
     s+="',"+str(r1)+","+str(r.choice(recurso))+");\n"
 
     print(s)
-
-#print(ru)
