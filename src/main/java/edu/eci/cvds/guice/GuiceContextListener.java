@@ -29,7 +29,7 @@ import edu.eci.cvds.services.impl.BibliotecaServicesImpl;
 
 /**
  *
- * @author 2152972
+ * @author 20152069
  */
 
 public class GuiceContextListener implements ServletContextListener {
