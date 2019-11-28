@@ -21,7 +21,7 @@ and open the template in the editor.
 
     <select id="getElementos" resultMap="ElementoResult">
         SELECT
-            *
+            id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso
         FROM
             recurso
     </select>

@@ -44,30 +44,24 @@
                                     <p:dataTable id="recursosTable" value="#{recursoBean.recursosList}" var="rec" widgetVar="recTable"
                                                  rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                                  sortMode="multiple" paginatorPosition="bottom">
-                                        <p:column style="column-width: 50em;" headerText="Id" sortBy="">
+                                        <p:column style="column-width: 50em;    " headerText="Id" sortBy="#{recursoBean.id}">
                                             <h:outputText value=""/>
                                         </p:column>
-                                        <p:column headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="">
-                                            <f:facet name="filter">
-                                                <p:selectOneMenu onchange="" styleClass="custom-filter">
-                                                    <f:selectItem itemLabel="Seleccionar" itemValue="" noSelectionOption="true" />
-                                                    <f:selectItems value=""/>
-                                                </p:selectOneMenu>
-                                            </f:facet>
-                                            <h:outputText value=""/>
+                                        <p:column headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="recursoBean.tipo}">
+
                                         </p:column>
                                         <p:column headerText="Nombre" sortBy="">
-                                            <h:outputText value=""/>
+                                            <h:outputText value="#{recursoBean.nombre}"/>
                                         </p:column>
                                         <p:column headerText="Ubicacion" sortBy="" filterBy="" filterMatchMode="exact">
-                                            <h:outputText value=""/>
+                                            <h:outputText value="#{recursoBean.ubicacion}"/>
                                         </p:column>
                                         <p:column headerText="Capacidad" sortBy="" filterBy="" filterMatchMode="exact">
-                                            <h:outputText value=""/>
+                                            <h:outputText value="#{recursoBean.capacidad}"/>
                                         </p:column>
 
                                         <p:column headerText="estado" sortBy="">
-                                            <h:outputText value=""/>
+                                            <h:outputText value="#{recursoBean.disponible}"/>
                                         </p:column>
                                     </p:dataTable>
                             </h:form>
