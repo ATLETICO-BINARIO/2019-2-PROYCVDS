@@ -48,19 +48,21 @@
                                             <h:outputText value=""/>
                                         </p:column>
                                         <p:column headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="recursoBean.tipo}">
+	
+										<!-- Falta el tipo -->
 
                                         </p:column>
-                                        <p:column headerText="Nombre" sortBy="">
+                                        <p:column headerText="Nombre" sortBy="#{recursoBean.nombre}">
                                             <h:outputText value="#{recursoBean.nombre}"/>
                                         </p:column>
-                                        <p:column headerText="Ubicacion" sortBy="" filterBy="" filterMatchMode="exact">
+                                        <p:column headerText="Ubicacion" sortBy="#{recursoBean.ubicacion}" filterBy="#{recursoBean.ubicacion}" filterMatchMode="exact">
                                             <h:outputText value="#{recursoBean.ubicacion}"/>
                                         </p:column>
-                                        <p:column headerText="Capacidad" sortBy="" filterBy="" filterMatchMode="exact">
+                                        <p:column headerText="Capacidad" sortBy="#{recursoBean.capacidad}" filterBy="#{recursoBean.capacidad}" filterMatchMode="exact">
                                             <h:outputText value="#{recursoBean.capacidad}"/>
                                         </p:column>
 
-                                        <p:column headerText="estado" sortBy="">
+                                        <p:column headerText="estado" sortBy="#{recursoBean.disponible}">
                                             <h:outputText value="#{recursoBean.disponible}"/>
                                         </p:column>
                                     </p:dataTable>

@@ -46,10 +46,10 @@ public class RecursoBean implements Serializable{
     
     public RecursoBean(){
         bibliotecaServices = BibliotecaServicesFactory.getInstance().getBibliotecaServices();
-    }
+		recursosList = consultarRecursos();
+	}
     
     public List<Recurso> getRecursosList() {
-        recursosList = consultarRecursos();
         return recursosList;
     }
 
@@ -89,7 +89,8 @@ public class RecursoBean implements Serializable{
     }
     
     public RecursoTipo[] recursoTipos(){
-       
+        System.out.println("Probando .....");
+        System.out.println(RecursoTipo.values());
         return RecursoTipo.values();
     }
     
