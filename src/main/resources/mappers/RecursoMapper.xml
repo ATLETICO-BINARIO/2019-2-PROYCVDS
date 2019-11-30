@@ -10,35 +10,26 @@ and open the template in the editor.
   
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.RecursoMapper">
 
-    
-    <resultMap type='Recurso' id='´RecursoResult'>
-        <id property='id' column='id'/>        
-        <result property='disponible' column='disponible'/>
-        <result property='averidado' column='averiado'/>
-        <result property='ubicacion' column='ubicacion'/>
-        <result property='nombre' column='nombre'/>
-        <result property='capacidad' column='capacidad'/>
-    </resultMap>
 
     <select id="getRecursos" resultMap="RecursoResult">
         SELECT
-            id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre, r.capacidad, r.tipo_recurso
         FROM
-            recurso
+            recurso r
     </select>
     
      <insert id="insertRecurso" parameterType="edu.eci.cvds.entities.Recurso">
-        insert into recurso(id,disponible,averiado,ubicacion,nombre,capacidad) values (#{recurso.id},#{recurso.disponible},#{recurso.averiado},#{recurso.ubicacion},#{recuso.nombre},#{recurso.capacidad})
+        insert into recurso(id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso) values (#{recurso.id},#{recurso.disponible},#{recurso.averiado},#{recurso.ubicacion},#{recuso.nombre},#{recurso.capacidad},#{recurso.tipo})
     </insert>
     
-        <resultMap type='Recurso' id='RecursoResult'>
+    <resultMap type='Recurso' id='RecursoResult'>
         <id property='id' column='id'/>
         <result property='disponible' column='disponible'/>
         <result property='averidado' column='averiado'/>
         <result property='ubicacion' column='ubicacion'/>
         <result property='nombre' column='nombre'/>
         <result property='capacidad' column='capacidad'/>
-        <result property='tipo_recurso' column='tipo_recurso'/>
+        <result property='tipo' column='tipo_recurso'/>
     </resultMap>
 
     

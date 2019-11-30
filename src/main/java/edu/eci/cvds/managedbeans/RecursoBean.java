@@ -24,10 +24,12 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
 import java.util.List;
+import javax.faces.bean.SessionScoped;
 
 
 @ManagedBean(name = "recursoBean")
-@ViewScoped
+@SuppressWarnings("deprecation")
+@SessionScoped 
 public class RecursoBean implements Serializable{
     
     public static final Logger log = LoggerFactory.getLogger(BasePageBean.class);
@@ -41,20 +43,26 @@ public class RecursoBean implements Serializable{
     private int capacidad;
     private boolean disponible;
     private boolean averiado;
-    private List<Recurso> recursosList;
-
+    
     
     public RecursoBean(){
         bibliotecaServices = BibliotecaServicesFactory.getInstance().getBibliotecaServices();
-		recursosList = consultarRecursos();
-	}
+    }
     
-    public List<Recurso> getRecursosList() {
-        return recursosList;
+    public boolean isDisponible() {
+        return disponible;
     }
 
-    public void setRecursoList(List<Recurso> recursosList) {
-        this.recursosList = recursosList;
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public boolean isAveriado() {
+        return averiado;
+    }
+
+    public void setAveriado(boolean averiado) {
+        this.averiado = averiado;
     }
     
     public String getNombre(){
@@ -86,21 +94,12 @@ public class RecursoBean implements Serializable{
     }
     public void setCapacidad(int capacidad){
         this.capacidad = capacidad;
-    }
-    
-    public RecursoTipo[] recursoTipos(){
-        System.out.println("Probando .....");
-        System.out.println(RecursoTipo.values());
-        return RecursoTipo.values();
-    }
+    }    
     
     public void registrarRecurso(){
         System.out.println("entre a registrar");
-
         try{
-
-
-            Recurso recurso = new Recurso(id, true, false, ubicacion, nombre, capacidad,tipo);
+            Recurso recurso = new Recurso(id, true, false, ubicacion, nombre, capacidad, tipo);
             bibliotecaServices.insertarRecurso(recurso);
         }catch(ServicesException e){
             facesError(e.getMessage());
@@ -108,22 +107,24 @@ public class RecursoBean implements Serializable{
     }
     
     public List<Recurso> consultarRecursos(){
-        List<Recurso> recs = null;
         try {
-            recs = bibliotecaServices.buscarRecurso();
+            System.out.println("Aqui comienza la consulta");
+            List<Recurso> recs = bibliotecaServices.buscarRecurso();
             for (Recurso i: recs) {
                 System.out.println(i.getId());
             }
-
-            facesError("Consulta exitosa");
+            System.out.println("Consulta exitosa");
+            return recs;
         }catch (ServicesException e) {
-            facesError(e.getMessage());
+            e.printStackTrace();
+            facesError("No se pudo consultar los recursos ");
+            return null;
         }
-        return recs;
+        
     }
     
     private void facesError(String message) {
-        FacesContext.getCurrentInstance().addMessage("Registrar elemento: ", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, "se genero un error"));
+        FacesContext.getCurrentInstance().addMessage("Problema al registrar un Recurso: ", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, "se genero un error"));
     }
     
             

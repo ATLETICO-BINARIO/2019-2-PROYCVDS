@@ -38,6 +38,7 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
     @Override
     public List<Recurso> buscarRecurso() throws ServicesException {
         try{ 
+            System.out.println("AQUI VA A COMENZAR A BUSCAR");
             return recursoDAO.loadAll();
         }catch(PersistenceException ex){
             throw new ServicesException("Serch error:"+ex.getLocalizedMessage(), ex);

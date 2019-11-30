@@ -15,14 +15,15 @@ import java.util.List;
 public class MyBatisRecursoDAO implements RecursoDAO {
 
     @Inject
-    RecursoMapper elementoMapper;
+    RecursoMapper recursoMapper;
 
     
 
     @Override
     public List<Recurso> loadAll() throws PersistenceException {
         try{   
-            return elementoMapper.getRecursos();
+            System.out.println("AQUI VA A ENTRAR AL MAPPER");
+            return recursoMapper.getRecursos();
         }catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Problemas con la busqueda de los elementos",e);
         }
@@ -31,7 +32,7 @@ public class MyBatisRecursoDAO implements RecursoDAO {
     @Override
     public void save(Recurso b) throws PersistenceException {
         try{
-            elementoMapper.insertRecurso(b);
+            recursoMapper.insertRecurso(b);
         }catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Problemas con el elemento a insertar",e);
         }
