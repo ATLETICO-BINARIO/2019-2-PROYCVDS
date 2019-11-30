@@ -13,7 +13,7 @@ public interface BibliotecaServices {
 
     public void insertarRecurso(Recurso elemento) throws ServicesException;
     
-    public List<Recurso> buscarRecurso() throws ServicesException;
+    public List<Recurso> consultarRecursos() throws ServicesException;
 
  
 }

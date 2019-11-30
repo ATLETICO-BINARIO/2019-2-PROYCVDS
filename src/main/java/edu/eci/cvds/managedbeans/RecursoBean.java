@@ -10,7 +10,6 @@ package edu.eci.cvds.managedbeans;
  * @author David Herrera
  */
 import edu.eci.cvds.entities.Recurso;
-import edu.eci.cvds.entities.RecursoTipo;
 import edu.eci.cvds.managedbeans.BasePageBean;
 import edu.eci.cvds.services.BibliotecaServices;
 import edu.eci.cvds.services.ServicesException;
@@ -88,11 +87,7 @@ public class RecursoBean implements Serializable{
         this.capacidad = capacidad;
     }
     
-    public RecursoTipo[] recursoTipos(){
-        System.out.println("Probando .....");
-        System.out.println(RecursoTipo.values());
-        return RecursoTipo.values();
-    }
+
     
     public void registrarRecurso(){
         System.out.println("entre a registrar");
@@ -110,7 +105,7 @@ public class RecursoBean implements Serializable{
     public List<Recurso> consultarRecursos(){
         List<Recurso> recs = null;
         try {
-            recs = bibliotecaServices.buscarRecurso();
+            recs = bibliotecaServices.consultarRecursos();
             for (Recurso i: recs) {
                 System.out.println(i.getId());
             }

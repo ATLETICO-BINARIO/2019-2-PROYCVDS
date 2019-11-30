@@ -36,7 +36,7 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
     }
 
     @Override
-    public List<Recurso> buscarRecurso() throws ServicesException {
+    public List<Recurso> consultarRecursos() throws ServicesException {
         try{ 
             return recursoDAO.loadAll();
         }catch(PersistenceException ex){
