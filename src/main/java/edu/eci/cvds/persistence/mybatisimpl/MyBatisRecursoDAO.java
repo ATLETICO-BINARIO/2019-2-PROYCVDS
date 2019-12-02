@@ -22,7 +22,6 @@ public class MyBatisRecursoDAO implements RecursoDAO {
     @Override
     public List<Recurso> loadAll() throws PersistenceException {
         try{   
-            System.out.println("AQUI VA A ENTRAR AL MAPPER");
             return recursoMapper.getRecursos();
         }catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Problemas con la busqueda de los elementos",e);

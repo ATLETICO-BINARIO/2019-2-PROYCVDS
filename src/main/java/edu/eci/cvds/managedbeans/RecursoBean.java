@@ -99,16 +99,23 @@ public class RecursoBean implements Serializable{
     public void registrarRecurso(){
         System.out.println("entre a registrar");
         try{
+            
             Recurso recurso = new Recurso(id, true, false, ubicacion, nombre, capacidad, tipo);
             bibliotecaServices.insertarRecurso(recurso);
         }catch(ServicesException e){
+            e.printStackTrace();
             facesError(e.getMessage());
         }
     }
     
+    public RecursoTipo[] recursoTipos(){
+        System.out.println(RecursoTipo.values());
+        for (RecursoTipo i: RecursoTipo.values())System.out.println(i);
+        return RecursoTipo.values();
+    
+    }
     public List<Recurso> consultarRecursos(){
         try {
-            System.out.println("Aqui comienza la consulta");
             List<Recurso> recs = bibliotecaServices.buscarRecurso();
             for (Recurso i: recs) {
                 System.out.println(i.getId());
@@ -116,7 +123,7 @@ public class RecursoBean implements Serializable{
             System.out.println("Consulta exitosa");
             return recs;
         }catch (ServicesException e) {
-            e.printStackTrace();
+            
             facesError("No se pudo consultar los recursos ");
             return null;
         }
