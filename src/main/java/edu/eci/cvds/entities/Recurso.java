@@ -2,6 +2,62 @@ package edu.eci.cvds.entities;
 
 
 public class Recurso {
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isAveriado() {
+        return averiado;
+    }
+
+    public void setAveriado(boolean averiado) {
+        this.averiado = averiado;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
     
     private int id;
     private boolean averiado;
@@ -11,78 +67,18 @@ public class Recurso {
     private int capacidad;
     private String tipo;
     
-    //Probando despliegue
-    //Probando despliegue
-    //Probando despliegue
-    //Probando despliegue
-    //Probando despliegue
-    //Probando despliegue
-    
     public Recurso(int id, boolean disponible,boolean averiado, String ubicacion, String nombre, int capacidad, String tipo) {
             super();
             this.id = id;
             this.ubicacion = ubicacion;
-            this.disponible = true;   
+            this.disponible = disponible;   
             this.averiado = averiado;
             this.nombre = nombre;
             this.capacidad = capacidad;
             this.tipo = tipo;
 	}
    
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	public boolean getDisponible() {
-		return disponible;
-	}
-
-
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
-	}
-
-        public String getUbicacion(){
-            return ubicacion;
-        }
-	public void setUbicacion(String ubicacion){
-            this.ubicacion = ubicacion;
-        }
-        
-        public boolean getAveriado(){
-            return averiado;
-        }
-        public void setAvereiado(boolean averiado){
-            this.averiado = averiado;
-        }
-        public int getCapacidad(){
-            return capacidad;
-        }
-        public void setCapacidad(int capacidad){
-            this.capacidad = capacidad;
-        }
-        public String getElementoTipo(){
-            return tipo;
-        }
-        public void setElementoTipo(String tipo){
-            this.tipo = tipo;
-        }
+	
 
 	@Override
     public String toString() {

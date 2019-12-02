@@ -25,7 +25,7 @@ and open the template in the editor.
     <resultMap type='Recurso' id='RecursoResult'>
         <id property='id' column='id'/>
         <result property='disponible' column='disponible'/>
-        <result property='averidado' column='averiado'/>
+        <result property='averiado' column='averiado'/>
         <result property='ubicacion' column='ubicacion'/>
         <result property='nombre' column='nombre'/>
         <result property='capacidad' column='capacidad'/>
