@@ -47,25 +47,25 @@
                                                  sortMode="multiple" paginatorPosition="bottom">
                                         
                                         
-                                        <p:column style="column-width: 50em;    " headerText="Id" sortBy="#{rec.id}">
+                                        <p:column style="width:100px" headerText="Id" sortBy="#{rec.id}">
                                             <h:outputText value="#{rec.id}"/>
                                         </p:column>
-                                        <p:column headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="recursoBean.tipo}">
+                                        <p:column  style="width:100px " headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="#{recursoBean.tipo}">
                                             <h:outputText value="#{rec.tipo}"/>
 
                                         </p:column>
-                                        <p:column headerText="Nombre" sortBy="#{rec.nombre}">
+                                        <p:column style="width:100px" headerText="Nombre" sortBy="#{rec.nombre}">
                                             <h:outputText value="#{rec.nombre}"/>
                                         </p:column>
-                                        <p:column headerText="Ubicacion" sortBy="#{rec.ubicacion}" filterBy="#{rec.ubicacion}" filterMatchMode="exact">
+                                        <p:column style="width:100px" headerText="Ubicacion" sortBy="#{rec.ubicacion}" filterBy="#{rec.ubicacion}" filterMatchMode="exact">
                                             <h:outputText value="#{rec.ubicacion}"/>
                                         </p:column>
-                                        <p:column headerText="Capacidad" sortBy="#{rec.capacidad}" filterBy="#{rec.capacidad}" filterMatchMode="exact">
+                                        <p:column style="width:100px" headerText="Capacidad" sortBy="#{rec.capacidad}" filterBy="#{rec.capacidad}" filterMatchMode="exact">
                                             <h:outputText value="#{rec.capacidad}"/>
                                         </p:column>
 
-                                        <p:column headerText="estado" sortBy="#{rec.disponible}">
-                                            <h:outputText value="#{rec.disponible}"/>
+                                        <p:column style="width:100px" headerText="Disponible" sortBy="#{rec.disponible}">
+                                            <h:outputText value="#{recursoBean.estaDisponible(rec)}"/>
                                         </p:column>
                                     </p:dataTable>
                             </h:form>

@@ -96,6 +96,16 @@ public class RecursoBean implements Serializable{
         this.capacidad = capacidad;
     }    
     
+    public String estaDisponible(Recurso r){
+        if(r.isDisponible()) return "Disponible";
+        else return "Esta en uso"; 
+    } 
+    
+    public String estaAveriado(Recurso r){
+        if(r.isAveriado()) return "Si";
+        else return "No"; 
+    } 
+    
     public void registrarRecurso(){
         System.out.println("entre a registrar");
         try{
