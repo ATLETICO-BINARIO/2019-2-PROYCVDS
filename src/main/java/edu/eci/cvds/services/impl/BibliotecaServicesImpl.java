@@ -36,12 +36,31 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
     }
 
     @Override
-    public List<Recurso> buscarRecurso() throws ServicesException {
+    public List<Recurso> consultarRecursos() throws ServicesException {
         try{ 
             return recursoDAO.loadAll();
         }catch(PersistenceException ex){
             throw new ServicesException("Serch error:"+ex.getLocalizedMessage(), ex);
         }
         
+    }
+
+    @Override
+    public List<Recurso> filtrarRecursos(Recurso recurso) throws ServicesException {
+        try{
+            return recursoDAO.filtrarRecurso(recurso);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar error:"+ex.getLocalizedMessage(), ex);
+        }
+        
+    }
+
+    @Override
+    public void cambiarEstadoMatenimiento(int id) throws ServicesException {
+        try{
+            recursoDAO.cambiarEstadoMatenimiento(id);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar error:"+ex.getLocalizedMessage(), ex);
+        }
     }
 }

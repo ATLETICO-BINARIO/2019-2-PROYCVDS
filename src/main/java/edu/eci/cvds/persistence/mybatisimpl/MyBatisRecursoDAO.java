@@ -38,5 +38,23 @@ public class MyBatisRecursoDAO implements RecursoDAO {
         
     }
 
+    @Override
+    public List<Recurso> filtrarRecurso(Recurso recurso) throws PersistenceException {
+        try{
+            return recursoMapper.filtrarRecurso(recurso);
+        }catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Problemas con filtrar los elementos",e);
+        }
+    }
+
+    @Override
+    public void cambiarEstadoMatenimiento(int id) throws PersistenceException {
+        try{
+            recursoMapper.cambiarEstadoMatenimiento(id);
+        }catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Problemas con filtrar los elementos",e);
+        }
+    }
+
 	
 }

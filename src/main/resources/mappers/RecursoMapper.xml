@@ -13,10 +13,28 @@ and open the template in the editor.
 
     <select id="getRecursos" resultMap="RecursoResult">
         SELECT
-            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre, r.capacidad, r.tipo_recurso
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
         FROM
             recurso r
     </select>
+    
+    <select id="filtrarRecurso" resultMap="RecursoResult" parameterType="Recurso">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+        <if test = "recurso.id != null">
+            WHERE r.id = #{recurso.id}
+        </if>
+        
+    </select>
+    
+    <update id="cambiarEstadoMatenimiento" parameterType="integer">
+        UPDATE public.recurso
+            SET disponible=false, averiado=(not (select averiado from recurso where id=#{id}))
+        WHERE id=#{id};
+        
+    </update>
     
      <insert id="insertRecurso" parameterType="edu.eci.cvds.entities.Recurso">
         insert into recurso(id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso) values (#{recurso.id},#{recurso.disponible},#{recurso.averiado},#{recurso.ubicacion},#{recuso.nombre},#{recurso.capacidad},#{recurso.tipo})

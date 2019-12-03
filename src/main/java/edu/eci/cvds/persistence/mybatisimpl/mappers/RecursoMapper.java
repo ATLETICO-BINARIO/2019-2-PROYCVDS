@@ -26,6 +26,8 @@ public interface RecursoMapper {
 
     public List<Recurso> getRecursos();
     public void insertRecurso(@Param("recurso") Recurso recurso);
+    public List<Recurso> filtrarRecurso(@Param("recurso") Recurso recurso);
+    public void cambiarEstadoMatenimiento(@Param("id") int id);
     
 
 }

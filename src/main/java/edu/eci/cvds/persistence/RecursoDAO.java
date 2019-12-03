@@ -11,5 +11,11 @@ public interface RecursoDAO {
     
     public void save(Recurso b) throws PersistenceException;
     
+    public List<Recurso> filtrarRecurso(Recurso recurso) throws PersistenceException;
+    
+    
+    public void cambiarEstadoMatenimiento(int id) throws PersistenceException;
+    
+    
     
 }
