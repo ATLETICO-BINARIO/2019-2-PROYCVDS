@@ -55,7 +55,7 @@
 >       Modificar el estado de los recursos existentes 
 
 ### Imágenes y descripción de las funcionalidades más importantes: 
-> ![](ImagenesdelreadMe/restringir.PNG)
+> ![](/ImagenesdelreadMe/restringir.PNG)
 > Restringir el accesso a las personas sin usuario 
 
 > ![](ImagenesdelreadMe/iniciar.PNG)
