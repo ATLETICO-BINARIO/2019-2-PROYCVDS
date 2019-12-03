@@ -129,7 +129,7 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
         }catch(PersistenceException ex) {
             throw new ServicesException("filtrar nombre error:"+ex.getLocalizedMessage(), ex);
         }
-<<<<<<< HEAD
+
     }
     /**
      * 
@@ -168,9 +168,5 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
             throw new ServicesException("filtrar tipo error:"+ex.getLocalizedMessage(), ex);
         }
     }
-    
-=======
-	}
->>>>>>> ee4f895a72ff350a7136ce9c8a95b004f5950853
     
 }
