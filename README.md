@@ -92,7 +92,7 @@ Diagrama de clases (hacerlo mediante ingeniería inversa):
 >### Enlace a la aplicación en Heroku. 
 > ##### http://cvdsproyecto2019-2.herokuapp.com/ 
 >### Enlace al sistema de integración continua 
-> Falta 
+> <https://tree.taiga.io/project/davidandresherrera-gestion-de-recursos-biblioteca>
 
 > ### Descripción del proceso: 
 > * #### Integrantes: 
@@ -110,7 +110,7 @@ Diagrama de clases (hacerlo mediante ingeniería inversa):
 >   ##### https://tree.taiga.io/project/davidandresherrera-gestion-de-recursos-biblioteca/backlog 
 
 > * #### Generar el 'release-burndown chart' del proyecto, e indicar los puntos de historia realizados y los faltantes. 
->   # Falta 
+>   # Falta
 
 >  #### Para cada Sprint: 
 > * #####  Sprint 1:
