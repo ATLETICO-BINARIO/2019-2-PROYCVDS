@@ -120,7 +120,7 @@ public class RecursoBean implements Serializable{
     
     public List<Recurso> consultarRecursos(){
         try {
-            List<Recurso> recs = bibliotecaServices.buscarRecurso();
+            List<Recurso> recs = bibliotecaServices.consultarRecursos();
             for (Recurso i: recs) {
                 System.out.println(i.getId());
             }
@@ -133,7 +133,32 @@ public class RecursoBean implements Serializable{
         }
         
     }
+	
+    public List<Recurso> recursosDisponibles(){
+        try {
+            List<Recurso> recs = bibliotecaServices.recursosDisponibles();
+            System.out.println("Consulta exitosa");
+            return recs;
+        }catch (ServicesException e) {
+            
+            facesError("No se pudo consultar los recursos ");
+            return null;
+        }
+    }    
     
+
+	public void modificarRecurso(Recurso r){
+        System.out.println("Vamos a modificar");
+        try{
+            bibliotecaServices.cambiarEstadoMatenimiento(r.getId());
+        }
+        catch(ServicesException e){
+            facesError("No se pudo modificar el recurso");
+        }
+
+    } 
+
+
     private void facesError(String message) {
         FacesContext.getCurrentInstance().addMessage("Problema al registrar un Recurso: ", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, "se genero un error"));
     }

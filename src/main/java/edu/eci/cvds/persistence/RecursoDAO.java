@@ -11,5 +11,17 @@ public interface RecursoDAO {
     
     public void save(Recurso b) throws PersistenceException;
     
+    public List<Recurso> recursoPorId(int id) throws PersistenceException;
+    
+    
+    public void cambiarEstadoMatenimiento(int id) throws PersistenceException;
+    
+    public List<Recurso> recursosDisponibles() throws PersistenceException;
+    
+    public List<Recurso> filtrarNombre(String nombre) throws PersistenceException;
+    
+    public List<Recurso> filtrarUbicacion(String ubicacion) throws PersistenceException;
+    
+    
     
 }

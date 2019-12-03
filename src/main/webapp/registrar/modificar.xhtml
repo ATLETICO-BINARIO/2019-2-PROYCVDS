@@ -69,8 +69,8 @@
                                             <h:outputText value="#{recursoBean.estaAveriado(rec)}"/>
                                         </p:column>
                                         
-                                          <p:column style="width:150px" headerText="Averiado" sortBy="#{rec.averiado}">
-                                              <p:commandButton class="btn btn-secondary btn-xs" value="Cambiar" actionListener="#{inicioBean.doLogin}" />
+                                          <p:column style="width:150px" >
+                                              <p:commandButton class="btn btn-secondary btn-xs" value="Cambiar" actionListener="#{recursoBean.modificarRecurso(rec)}" />
                                         </p:column>
                                     </p:dataTable>
                             </h:form>

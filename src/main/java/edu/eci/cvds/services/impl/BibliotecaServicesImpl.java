@@ -23,7 +23,11 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
 	
 	
 
-
+    /**
+     * 
+     * @param recurso el recurso que se quiere insertar/agregar
+     * @throws ServicesException 
+     */
     @Override
     public void insertarRecurso(Recurso recurso) throws ServicesException {
         try{
@@ -34,9 +38,13 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
         
    
     }
-
+    /**
+     * 
+     * @return retorna todos los recursos
+     * @throws ServicesException 
+     */
     @Override
-    public List<Recurso> buscarRecurso() throws ServicesException {
+    public List<Recurso> consultarRecursos() throws ServicesException {
         try{ 
             return recursoDAO.loadAll();
         }catch(PersistenceException ex){
@@ -44,4 +52,78 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
         }
         
     }
+    /**
+     * 
+     * @param id id del recurso que se quiere buscar
+     * @return  retorna el recurso con el que el id coincide
+     * @throws ServicesException 
+     */
+    @Override
+    public List<Recurso> recursoPorId(int id) throws ServicesException {
+        try{
+            return recursoDAO.recursoPorId(id);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar error:"+ex.getLocalizedMessage(), ex);
+        }
+        
+    }
+    
+    /**
+     * 
+     * @param id el id de que se quiere cambiar el estado de mantenimiento
+     * @throws ServicesException 
+     */
+
+    @Override
+    public void cambiarEstadoMatenimiento(int id) throws ServicesException {
+        try{
+            recursoDAO.cambiarEstadoMatenimiento(id);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar error:"+ex.getLocalizedMessage(), ex);
+        }
+    }
+    
+
+    /**
+     * 
+     * @return retorna los recursos disponibles
+     * @throws ServicesException 
+     */
+    @Override
+    public List<Recurso> recursosDisponibles() throws ServicesException {
+        try{
+            return recursoDAO.recursosDisponibles();
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar disponibles error:"+ex.getLocalizedMessage(), ex);
+        }
+    }
+    /**
+     * 
+     * @param nombre nombre o parte de este que se quiere buscar
+     * @return retorna los recursos que coinciden con la cadena nombre
+     * @throws ServicesException 
+     */
+    @Override
+    public List<Recurso> filtrarNombre(String nombre) throws ServicesException {
+        try{
+            return recursoDAO.filtrarNombre(nombre);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar nombre error:"+ex.getLocalizedMessage(), ex);
+        }
+    }
+    /**
+     * 
+     * @param ubicacion cadena o parte de ella de la ubicacion que se quiere buscar
+     * @return retorna los recursos que coincidan con esta ubicacion
+     * @throws ServicesException 
+     */
+    @Override
+    public List<Recurso> filtrarUbicacion(String ubicacion) throws ServicesException {
+        try{
+            return recursoDAO.filtrarUbicacion(ubicacion);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar nombre error:"+ex.getLocalizedMessage(), ex);
+        }
+	}
+    
 }

@@ -13,14 +13,67 @@ and open the template in the editor.
 
     <select id="getRecursos" resultMap="RecursoResult">
         SELECT
-            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre, r.capacidad, r.tipo_recurso
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
         FROM
             recurso r
     </select>
     
+    <select id="recursoPorId" resultMap="RecursoResult" parameterType="integer">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE r.id = #{id};
+
+        
+    </select>
+    
+    <select id="recursosDisponibles" resultMap="RecursoResult">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE r.disponible = true;
+
+        
+    </select>
+    
+    <update id="cambiarEstadoMatenimiento" parameterType="integer">
+        UPDATE public.recurso
+            SET disponible=false, averiado=(not (select averiado from recurso where id=#{id}))
+        WHERE id=#{id};
+        
+    </update>
+    
      <insert id="insertRecurso" parameterType="edu.eci.cvds.entities.Recurso">
         insert into recurso(id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso) values (#{recurso.id},#{recurso.disponible},#{recurso.averiado},#{recurso.ubicacion},#{recurso.nombre},#{recurso.capacidad},#{recurso.tipo})
     </insert>
+    
+    <select id="filtrarNombre" resultMap="RecursoResult" parameterType="string">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE upper(nombre) like concat(upper(#{nombre}),'%');
+
+        
+    </select>
+    
+    <select id="filtrarUbicacion" resultMap="RecursoResult" parameterType="string">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE upper(ubicacion) like concat(upper(#{ubicacion}),'%');
+
+        
+    </select>
+    
+    
     
     <resultMap type='Recurso' id='RecursoResult'>
         <id property='id' column='id'/>

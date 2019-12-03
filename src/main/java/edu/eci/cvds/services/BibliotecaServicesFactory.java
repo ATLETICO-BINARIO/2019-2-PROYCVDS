@@ -35,7 +35,7 @@ public class BibliotecaServicesFactory {
             @Override
             protected void initialize() {
                 install(JdbcHelper.PostgreSQL);
-                setClassPathResource("mybatis-config-h2.xml");
+                setClassPathResource("mybatis-config.xml");
                 bind(BibliotecaServices.class).to(BibliotecaServicesImpl.class);
                 bind(RecursoDAO.class).to(MyBatisRecursoDAO.class);
                 
