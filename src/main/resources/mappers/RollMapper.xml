@@ -5,8 +5,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.RecursoMapper">
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.RollMapper">
 
 
     <select id="getRoles" resultMap="RollResult">

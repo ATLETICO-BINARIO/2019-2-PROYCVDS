@@ -7,8 +7,10 @@ package edu.eci.cvds.services.impl;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.Recurso;
+import edu.eci.cvds.entities.Reserva;
 import edu.eci.cvds.persistence.RecursoDAO;
 import edu.eci.cvds.persistence.PersistenceException;
+import edu.eci.cvds.persistence.ReservaDAO;
 import edu.eci.cvds.services.BibliotecaServices;
 import edu.eci.cvds.services.ServicesException;
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
 
 	@Inject
 	private RecursoDAO recursoDAO;
+        
+        @Inject
+	private ReservaDAO reservaDAO;
 	
 	
 
@@ -123,6 +128,43 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
             return recursoDAO.filtrarUbicacion(ubicacion);
         }catch(PersistenceException ex) {
             throw new ServicesException("filtrar nombre error:"+ex.getLocalizedMessage(), ex);
+        }
+    }
+    /**
+     * 
+     * @param capacidad capacidad por la que se quiere filtrar
+     * @return los elemento con la capacidad enviada
+     * @throws ServicesException 
+     */
+    @Override
+    public List<Recurso> filtrarCapacidad(int capacidad) throws ServicesException {
+        try{
+            return recursoDAO.filtrarCapacidad(capacidad);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar capacidad error:"+ex.getLocalizedMessage(), ex);
+        }
+    }
+    /**
+     * 
+     * @param tipo el tipo de los recursos que se desean buscar
+     * @return retorna los libros que coinciden con el tipo
+     * @throws ServicesException 
+     */
+    @Override
+    public List<Recurso> filtrarTipo(String tipo) throws ServicesException {
+        try{
+            return recursoDAO.filtrarTipo(tipo);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar tipo error:"+ex.getLocalizedMessage(), ex);
+        }
+    }
+
+    @Override
+    public void insertReserva(Reserva reserva) throws ServicesException {
+        try{
+            reservaDAO.insertReserva(reserva);
+        }catch(PersistenceException ex) {
+            throw new ServicesException("filtrar tipo error:"+ex.getLocalizedMessage(), ex);
         }
     }
     

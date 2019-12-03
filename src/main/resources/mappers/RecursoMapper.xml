@@ -73,6 +73,28 @@ and open the template in the editor.
         
     </select>
     
+    <select id="filtrarCapacidad" resultMap="RecursoResult" parameterType="integer">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE r.capacidad = #{capacidad};
+
+        
+    </select>
+    
+    <select id="filtrarTipo" resultMap="RecursoResult" parameterType="string">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE upper(tipo_recurso) like concat(upper(#{tipo}),'%');
+
+        
+    </select>
+    
     
     
     <resultMap type='Recurso' id='RecursoResult'>

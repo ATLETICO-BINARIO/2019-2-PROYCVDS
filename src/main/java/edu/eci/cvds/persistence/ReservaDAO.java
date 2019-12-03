@@ -5,10 +5,14 @@
  */
 package edu.eci.cvds.persistence;
 
+import edu.eci.cvds.entities.Reserva;
+
 /**
  *
  * @author User
  */
 public interface ReservaDAO {
+    
+    public void insertReserva(Reserva reserva) throws PersistenceException;
     
 }

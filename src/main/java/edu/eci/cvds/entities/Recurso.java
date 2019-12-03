@@ -82,7 +82,7 @@ public class Recurso {
 
 	@Override
     public String toString() {
-        return "Elemento { id: "+id+", ubicacion: "+ubicacion+", nombre: "+nombre+", disponible: "+disponible+" }";
+        return "Elemento { id: "+id+", ubicacion: "+ubicacion+", nombre: "+nombre+", disponible: "+disponible+", capacidad: "+capacidad+" }";
     }
     
     

@@ -97,5 +97,24 @@ public class ServiciosBibliotecaTest {
                 
 		assertTrue (testigo != testigo2);
 	}
+        
+        @Test
+        public void deberiaFiltrarRecursosPorCapacidad() throws ServicesException {
+
+		List<Recurso> recurPrueba = bibliotecaS.filtrarCapacidad(5);
+                //for(Recurso r:recurPrueba) System.out.println(r);
+		assertTrue (recurPrueba !=null);
+	}
+        
+        
+                
+        @Test
+        public void deberiaFiltrarRecursosPorTipo() throws ServicesException {
+
+		List<Recurso> recurPrueba = bibliotecaS.filtrarTipo("l");
+                //for(Recurso r:recurPrueba) System.out.println(r);
+		assertTrue (recurPrueba !=null);
+	}        
+        
     
 }

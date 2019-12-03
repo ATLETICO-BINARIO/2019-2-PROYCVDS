@@ -31,6 +31,8 @@ public interface RecursoMapper {
     public List<Recurso> recursosDisponibles();
     public List<Recurso> filtrarNombre(@Param("nombre") String nombre);
     public List<Recurso> filtrarUbicacion(@Param("ubicacion")String Ubicacion);
+    public List<Recurso> filtrarCapacidad(@Param("capacidad") int capacidad);
+    public List<Recurso> filtrarTipo(@Param("tipo") String tipo);
     
 
 }

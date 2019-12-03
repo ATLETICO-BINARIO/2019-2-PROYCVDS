@@ -115,6 +115,34 @@ public class MyBatisRecursoDAO implements RecursoDAO {
             throw new PersistenceException("Problemas con filtrar los elementos por nombre",e);
         }
     }
+    /**
+     * 
+     * @param capacidad la capacidad por la que se quiere filtrar
+     * @return los recursos que cumplen con esa capacidad
+     * @throws PersistenceException 
+     */
+    @Override
+    public List<Recurso> filtrarCapacidad(int capacidad) throws PersistenceException {
+        try{
+            return recursoMapper.filtrarCapacidad(capacidad);
+        }catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Problemas con filtrar los elementos por nombre",e);
+        }
+    }
+    /**
+     * 
+     * @param tipo tipo de los recursos que se quieren buscar
+     * @return retorna los recursos que cumplen con el tipo
+     * @throws PersistenceException 
+     */
+    @Override
+    public List<Recurso> filtrarTipo(String tipo) throws PersistenceException {
+        try{
+            return recursoMapper.filtrarTipo(tipo);
+        }catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Problemas con filtrar los elementos por nombre",e);
+        }
+    }
 
 	
 }

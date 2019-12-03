@@ -15,7 +15,7 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface ReservaMapper {
     
-    public List<Reserva> getReserva();
+    //public List<Reserva> getReserva();
     public void insertReserva(@Param("reserva") Reserva reserva);
     
 }
