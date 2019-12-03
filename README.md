@@ -75,6 +75,10 @@
 
 Diagrama de clases (hacerlo mediante ingeniería inversa): 
 
+> ![](ImagenesdelreadMe/clases.png)
+>
+> Diagrama de clases 
+
 ### Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL): 
 
 > * ##### En la capa Aplicacion se uso lo siguiente: 
