@@ -15,9 +15,15 @@ public interface BibliotecaServices {
     
     public List<Recurso> consultarRecursos() throws ServicesException;
     
-    public List<Recurso> filtrarRecursos(Recurso recurso) throws ServicesException;
+    public List<Recurso> recursoPorId(int id) throws ServicesException;
     
     public void cambiarEstadoMatenimiento(int id) throws ServicesException;
+    
+    public List recursosDisponibles() throws ServicesException;
+    
+    public List<Recurso> filtrarNombre(String nombre) throws ServicesException;
+    
+    public List<Recurso> filtrarUbicacion(String nombre) throws ServicesException;
 
  
 }

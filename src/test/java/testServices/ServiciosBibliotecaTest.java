@@ -46,23 +46,51 @@ public class ServiciosBibliotecaTest {
 	}
         
         @Test
-        public void deberiaFiltrarRecursos() throws ServicesException {
+        public void deberiaFiltrarRecursosPorId() throws ServicesException {
 
-		List<Recurso> recurPrueba = bibliotecaS.filtrarRecursos(new Recurso(116, false,false, "", "", 0, ""));
-                for(Recurso i:recurPrueba) System.out.println(i);
+		List<Recurso> recurPrueba = bibliotecaS.recursoPorId(116);
+
+		assertTrue (recurPrueba !=null);
+	}
+        
+        @Test
+        public void deberiaFiltrarRecursosDisponibles() throws ServicesException {
+
+		List<Recurso> recurPrueba = bibliotecaS.recursosDisponibles();
+
+		assertTrue (recurPrueba !=null);
+	}
+        
+        @Test
+        public void deberiaFiltrarRecursosPorNombre() throws ServicesException {
+
+		List<Recurso> recurPrueba = bibliotecaS.filtrarNombre("e");
+                
+                //for(Recurso r: recurPrueba) System.out.println(r);
+                
+		assertTrue (recurPrueba !=null);
+	}
+        
+        @Test
+        public void deberiaFiltrarRecursosPorUbicacion() throws ServicesException {
+
+		List<Recurso> recurPrueba = bibliotecaS.filtrarUbicacion("e");
+                
+                //for(Recurso r: recurPrueba) System.out.println(r);
+                
 		assertTrue (recurPrueba !=null);
 	}
         
         @Test
         public void cambiarEstadoMatenimiento() throws ServicesException {
             
-                List<Recurso> recurPrueba = bibliotecaS.filtrarRecursos(new Recurso(102, false,false, "", "", 0, ""));
+                List<Recurso> recurPrueba = bibliotecaS.recursoPorId(102);
                 
                 boolean testigo = recurPrueba.get(0).isAveriado();
 
 		bibliotecaS.cambiarEstadoMatenimiento(recurPrueba.get(0).getId());
                 
-                recurPrueba = bibliotecaS.filtrarRecursos(new Recurso(102, false,false, "", "", 0, ""));
+                recurPrueba = bibliotecaS.recursoPorId(102);
                 
                 boolean testigo2 = recurPrueba.get(0).isAveriado();
                 

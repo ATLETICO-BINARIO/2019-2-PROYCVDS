@@ -18,14 +18,25 @@ and open the template in the editor.
             recurso r
     </select>
     
-    <select id="filtrarRecurso" resultMap="RecursoResult" parameterType="Recurso">
+    <select id="recursoPorId" resultMap="RecursoResult" parameterType="integer">
         SELECT 
             r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
         FROM
             recurso r
-        <if test = "recurso.id != null">
-            WHERE r.id = #{recurso.id}
-        </if>
+
+        WHERE r.id = #{id};
+
+        
+    </select>
+    
+    <select id="recursosDisponibles" resultMap="RecursoResult">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE r.disponible = true;
+
         
     </select>
     
@@ -39,6 +50,30 @@ and open the template in the editor.
      <insert id="insertRecurso" parameterType="edu.eci.cvds.entities.Recurso">
         insert into recurso(id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso) values (#{recurso.id},#{recurso.disponible},#{recurso.averiado},#{recurso.ubicacion},#{recuso.nombre},#{recurso.capacidad},#{recurso.tipo})
     </insert>
+    
+    <select id="filtrarNombre" resultMap="RecursoResult" parameterType="string">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE upper(nombre) like concat(upper(#{nombre}),'%');
+
+        
+    </select>
+    
+    <select id="filtrarUbicacion" resultMap="RecursoResult" parameterType="string">
+        SELECT 
+            r.id, r.disponible, r.averiado, r.ubicacion, r.nombre , r.capacidad, r.tipo_recurso
+        FROM
+            recurso r
+
+        WHERE upper(ubicacion) like concat(upper(#{ubicacion}),'%');
+
+        
+    </select>
+    
+    
     
     <resultMap type='Recurso' id='RecursoResult'>
         <id property='id' column='id'/>
