@@ -55,7 +55,7 @@
 >       Modificar el estado de los recursos existentes 
 
 ### Imágenes y descripción de las funcionalidades más importantes: 
-![](/ImagenesdelreadMe\restringir.PNG)
+![](/2019-2-PROYCVDS/ImagenesdelreadMe/restringir.png)
 > Restringir el accesso a las personas sin usuario 
 
 > ![](ImagenesdelreadMe/iniciar.PNG)
