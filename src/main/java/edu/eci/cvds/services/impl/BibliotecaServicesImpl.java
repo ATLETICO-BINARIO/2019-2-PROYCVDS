@@ -90,7 +90,7 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
      * @throws ServicesException 
      */
     @Override
-    public List recursosDisponibles() throws ServicesException {
+    public List<Recurso> recursosDisponibles() throws ServicesException {
         try{
             return recursoDAO.recursosDisponibles();
         }catch(PersistenceException ex) {
@@ -124,7 +124,6 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
         }catch(PersistenceException ex) {
             throw new ServicesException("filtrar nombre error:"+ex.getLocalizedMessage(), ex);
         }
-    }
-    
+	}
     
 }
