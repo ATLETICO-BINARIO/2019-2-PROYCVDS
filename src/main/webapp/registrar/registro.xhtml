@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3c.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:jsf="http://xmlns.jcp.org/jsf">
+<html lang="en" xmlns="http://www.w3c.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
 
 <h:head>
     <!-- Required meta tags-->
@@ -36,35 +40,46 @@
                 <div class="card-body">
                     <h2 class="title">Registrar Recurso</h2>
                     
-                        
-                        
-                        <p:outputLabel class="intlabel"  value="Tipo: " />
-                            <p:selectOneMenu value="#{recursoBean.tipo}" style="width:460px; background:#cc0000;">
-                                <f:selectItems value="#{recursoBean.recursoTipos()}"  />
-                            </p:selectOneMenu>
+                    <h:form id="RegistroTipo">  
+                        <p:outputLabel for="@next"  value="Tipo: " />
+                            <h:selectOneMenu id="tipo" type="String" value="#{recursoBean.tipo}" binding="#{tipo}" required="true" dynamic="true" style="width:600px;">
+                                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                                    <f:selectItem itemLabel="Computador" itemValue="computador" />
+                                    <f:selectItem itemLabel="Libro" itemValue="libro"/>
+                                    <f:selectItem itemLabel="Sala de Estudio" itemValue="sala de estudio"/>
+                                    <f:facet name="footer">
+                                        <p:separator />
+                                        <h:outputText value="Tipos" style="font-weight:bold;"/>
+                                    </f:facet>
+                            </h:selectOneMenu>
 
                       
-             
+                        
                         <div class="input-group">
                             <br></br>
-                            <p:inputText class="input--style-1" type="text" placeholder="Nombre" required="true"/>
+                            <p:outputLabel for="Nombre" value="Nombre: "/>
+                            <p:inputText class="input--style-1" id="Nombre" type="String" placeholder="Nombre" required="true" binding="#{nombre}"/>
                         </div>
 
                         <div class="input-group">
-                            <p:inputText class="input--style-1" type="text" placeholder="Identificador" required="true" />
-                            </div>
-
-                        <div class="input-group">
-                            <p:inputText class="input--style-1" type="text" placeholder="Ubicación" required="true"  />
+                            <p:outputLabel for="Id" value="Identificador: " />
+                            <p:inputText class="input--style-1" id="Id" type="long" placeholder="Identificador" required="true" binding="#{id}" />
                         </div>
 
                         <div class="input-group">
-                            <p:inputText class="input--style-1" type="text" placeholder="Capacidad" required="true" />
+                            <p:outputLabel for="Ubicacion" value="Ubicacion: "/>
+                            <p:inputText class="input--style-1"  id="Ubicacion" type="String" placeholder="Ubicación" required="true" binding="#{ubicacion}"/>
+                        </div>
+                        
+                        <div class="input-group">
+                            <p:outputLabel for="Capacidad" value="Capacidad: " />
+                            <p:inputText class="input--style-1" id="Capacidad" type="String" placeholder="Capacidad" required="true" binding="#{capacidad}"/>
                         </div>
 
                         <div class="p-t-20">
-                            <p:commandButton class="login100-form-btn" value="Registrar" actionListener="#{recursoBean.registrarRecurso}" ></p:commandButton>
+                            <p:commandButton update="RegistroTipo" class="login100-form-btn" actionListener="#{recursoBean.registrarRecurso(nombre.value,id.value,ubicacion.value,capacidad.value,tipo.value)}" value="Registrar"/>
                         </div>
+                    </h:form>
                     
                 </div>
             </div>

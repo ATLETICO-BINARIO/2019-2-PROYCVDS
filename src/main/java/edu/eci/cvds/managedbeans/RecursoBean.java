@@ -10,7 +10,6 @@ package edu.eci.cvds.managedbeans;
  * @author David Herrera
  */
 import edu.eci.cvds.entities.Recurso;
-import edu.eci.cvds.entities.RecursoTipo;
 import edu.eci.cvds.managedbeans.BasePageBean;
 import edu.eci.cvds.services.BibliotecaServices;
 import edu.eci.cvds.services.ServicesException;
@@ -75,6 +74,7 @@ public class RecursoBean implements Serializable{
         return tipo;
     }
     public void setTipo(String tipo){
+        System.out.println("Seteó Tipo");
         this.tipo = tipo;
     }
     public String getUbicacion(){
@@ -85,6 +85,7 @@ public class RecursoBean implements Serializable{
     }
     public int getId(){
         return id;
+        
     }
     public void setId(int identificador){
         this.id = identificador;
@@ -106,24 +107,17 @@ public class RecursoBean implements Serializable{
         else return "No"; 
     } 
     
-    public void registrarRecurso(){
-        System.out.println("entre a registrar");
+    public void registrarRecurso(String nombre, int id, String ubicacion, int capacidad, String tipo){
         try{
-            
             Recurso recurso = new Recurso(id, true, false, ubicacion, nombre, capacidad, tipo);
-            bibliotecaServices.insertarRecurso(recurso);
+            bibliotecaServices.insertarRecurso(recurso);            
+            System.out.println("Se ha registrado con exito");
         }catch(ServicesException e){
             e.printStackTrace();
             facesError(e.getMessage());
         }
     }
     
-    public RecursoTipo[] recursoTipos(){
-        System.out.println(RecursoTipo.values());
-        for (RecursoTipo i: RecursoTipo.values())System.out.println(i);
-        return RecursoTipo.values();
-    
-    }
     public List<Recurso> consultarRecursos(){
         try {
             List<Recurso> recs = bibliotecaServices.buscarRecurso();

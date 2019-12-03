@@ -19,7 +19,7 @@ and open the template in the editor.
     </select>
     
      <insert id="insertRecurso" parameterType="edu.eci.cvds.entities.Recurso">
-        insert into recurso(id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso) values (#{recurso.id},#{recurso.disponible},#{recurso.averiado},#{recurso.ubicacion},#{recuso.nombre},#{recurso.capacidad},#{recurso.tipo})
+        insert into recurso(id,disponible,averiado,ubicacion,nombre,capacidad,tipo_recurso) values (#{recurso.id},#{recurso.disponible},#{recurso.averiado},#{recurso.ubicacion},#{recurso.nombre},#{recurso.capacidad},#{recurso.tipo})
     </insert>
     
     <resultMap type='Recurso' id='RecursoResult'>
