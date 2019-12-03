@@ -115,9 +115,8 @@ Diagrama de clases (hacerlo mediante ingeniería inversa):
 >  #### Para cada Sprint: 
 > * #####  Sprint 1:
 >   * ######  Imagen del 'sprint-backlog' 
->   ![](ImagenesdelreadMe/er.PNG)
+>		![](ImagenesdelreadMe/er.png)
  
-
 Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso 
 
  
