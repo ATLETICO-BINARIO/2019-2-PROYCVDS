@@ -10,7 +10,6 @@ package edu.eci.cvds.managedbeans;
  * @author David Herrera
  */
 import edu.eci.cvds.entities.Recurso;
-import edu.eci.cvds.managedbeans.BasePageBean;
 import edu.eci.cvds.services.BibliotecaServices;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.BibliotecaServicesFactory;
@@ -19,7 +18,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
 import java.util.List;

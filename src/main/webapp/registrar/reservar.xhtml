@@ -28,7 +28,7 @@
     <link rel="icon" type="image/png" href="../images/registro.svg"/>
 </h:head>
 
-<body>
+<h:body>   
     <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
         <div class="wrapper wrapper--w680">
             <div class="card-2 card-1">
@@ -39,7 +39,19 @@
                         <div class="container">
                         <center>
                             <h:form id="form">
-                                    <p:dataTable id="recursosTable" value="#{recursoBean.recursosDisponibles()}" var="rec" widgetVar="recTable"
+                                <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+                                <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                                    <h:outputText value="#{reservaBean.dateI}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy HH" />
+                                    </h:outputText>
+                                    <h:outputText value="#{reservaBean.dateF}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy HH" />
+                                    </h:outputText>
+                                </p:dialog>
+                                <h:panelGrid columns="2" cellpadding="5">
+                                
+     
+                                        <p:dataTable id="recursosTable" value="#{recursoBean.recursosDisponibles()}" var="rec" widgetVar="recTable"
                                                  rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                                  sortMode="multiple" paginatorPosition="bottom">
                                         
@@ -65,9 +77,24 @@
                                             <h:outputText value="#{recursoBean.estaDisponible(rec)}"/>
                                         </p:column>
                                           <p:column style="width:150px" headerText="" >
-                                              <p:commandButton class="btn btn-secondary btn-xs" value="Reservar"  />
+                                              <p:commandButton value="Reservar" type="button" onclick="PF('dlg2').show();" />
+                                                <p:dialog  header="Realice la Reserva"  widgetVar="dlg2" modal="true" height="100">
+                                                    <h:panelGrid columns="2" cellpadding="12" style="width:400px">
+
+                                                            <p:outputLabel for="button" value="Fecha Inicial Reserva:" />                                                            
+                                                            <p:outputLabel for="button2" value="Fecha Final Reserva:" />
+                                                            <p:calendar id="button" value="#{reservaBean.dateI}"  showOn="button" />
+                                                            <p:calendar id="button2" value="#{reservaBean.dateF}"  showOn="button" />
+                                                            <p:outputLabel for="hourI" value="Hora Inicial Reserva:" />                                                                   
+                                                            <p:calendar id="hourI" value="#{reservaBean.hourI}" pattern="HH:mm" timeOnly="true"  />                                                         
+                                                            
+                                                            
+                                                    </h:panelGrid>
+                                                    <p:commandButton update="form" class="login100-form-btn" actionListener="#{reservaBean.registrarReserva}" value="Reservar"/>
+                                                  </p:dialog> 
                                         </p:column>
                                     </p:dataTable>
+                                    </h:panelGrid>
                             </h:form>
                         </center>
                     </div>
@@ -80,16 +107,18 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <h:outputScript library="primefaces" name="vendor/jquery/jquery.min.js"/>
     <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <h:outputScript library="primefaces" name="vendor/select2/select2.min.js"/>
+    <h:outputScript library="primefaces" name="vendor/datepicker/moment.min.js"/>
+    <h:outputScript library="primefaces" name="vendor/datepicker/daterangepicker.js"/>
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
-
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    <h:outputScript library="primefaces" name="js/global.js"/>
+    
+    
+    
+</h:body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
 <!-- end document-->
