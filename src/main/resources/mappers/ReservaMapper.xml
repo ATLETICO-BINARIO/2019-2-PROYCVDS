@@ -12,7 +12,7 @@ and open the template in the editor.
   
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ReservaMapper">
     
-        <insert id="insertRecurso" parameterType="map">
+        <insert id="insertReserva" parameterType="edu.eci.cvds.entities.Reserva">
             INSERT INTO reserva
             (fecha_inicio, fecha_fin, fecha_reserva,usuario,recurso)
             VALUES(#{reserva.fechaInicio},#{reserva.fechaFin},#{reserva.fechaReserva},#{reserva.usuario.id},#{reserva.recurso.id});

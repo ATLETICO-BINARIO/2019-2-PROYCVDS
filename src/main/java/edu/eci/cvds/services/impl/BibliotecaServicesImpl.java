@@ -159,7 +159,11 @@ public class BibliotecaServicesImpl implements BibliotecaServices {
             throw new ServicesException("filtrar tipo error:"+ex.getLocalizedMessage(), ex);
         }
     }
-
+    /**
+     * 
+     * @param reserva la reserva que se desea insertar
+     * @throws ServicesException 
+     */
     @Override
     public void insertReserva(Reserva reserva) throws ServicesException {
         try{
