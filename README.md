@@ -60,14 +60,17 @@
 > Restringir el accesso a las personas sin usuario 
 >
 > ![](ImagenesdelreadMe/iniciar.png)
+>
 > Hacer el login y redireccionar segun el tipo de usuario 
 > 
 > ![](ImagenesdelreadMe/consultar.png)
+>
 > Cunsultar un recurso 
 
  
 ### Arquitectura y Diseño detallado: 
 > ![](ImagenesdelreadMe/er.png)
+>
 >Modelo E-R: 
 
 Diagrama de clases (hacerlo mediante ingeniería inversa): 
