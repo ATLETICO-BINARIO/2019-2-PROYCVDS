@@ -109,6 +109,7 @@ Diagrama de clases (hacerlo mediante ingeniería inversa):
 >
 >   ##### https://tree.taiga.io/project/davidandresherrera-gestion-de-recursos-biblioteca/backlog 
 
+
 > * #### Generar el 'release-burndown chart' del proyecto, e indicar los puntos de historia realizados y los faltantes. 
 >   # Falta
 
