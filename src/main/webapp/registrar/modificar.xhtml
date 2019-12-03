@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates"/>
 
     <!-- Title Page-->
-    <title>Registro Recurso</title>
+    <title>Modificar Recurso</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all"/>
@@ -39,33 +39,38 @@
                         <div class="container">
                         <center>
                             <h:form id="form">
-                                    <p:dataTable id="recursosTable" value="" var="rec" widgetVar="recTable"
+                                    <p:dataTable id="recursosTable" value="#{recursoBean.consultarRecursos()}" var="rec" widgetVar="recTable"
                                                  rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                                  sortMode="multiple" paginatorPosition="bottom">
-                                        <p:column style="column-width: 50em;" headerText="Id" sortBy="">
-                                            <h:outputText value=""/>
+                                        
+                                        
+                                        <p:column style="width:100px" headerText="Id" sortBy="#{rec.id}">
+                                            <h:outputText value="#{rec.id}"/>
                                         </p:column>
-                                        <p:column headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="">
-                                            <f:facet name="filter">
-                                                <p:selectOneMenu onchange="" styleClass="custom-filter">
-                                                    <f:selectItem itemLabel="Seleccionar" itemValue="" noSelectionOption="true" />
-                                                    <f:selectItems value=""/>
-                                                </p:selectOneMenu>
-                                            </f:facet>
-                                            <h:outputText value=""/>
+                                        <p:column  style="width:100px " headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="#{recursoBean.tipo}">
+                                            <h:outputText value="#{rec.tipo}"/>
+
                                         </p:column>
-                                        <p:column headerText="Nombre" sortBy="">
-                                            <h:outputText value=""/>
+                                        <p:column style="width:100px" headerText="Nombre" sortBy="#{rec.nombre}">
+                                            <h:outputText value="#{rec.nombre}"/>
                                         </p:column>
-                                        <p:column headerText="Ubicacion" sortBy="" filterBy="" filterMatchMode="exact">
-                                            <h:outputText value=""/>
+                                        <p:column style="width:100px" headerText="Ubicacion" sortBy="#{rec.ubicacion}" filterBy="#{rec.ubicacion}" filterMatchMode="exact">
+                                            <h:outputText value="#{rec.ubicacion}"/>
                                         </p:column>
-                                        <p:column headerText="Capacidad" sortBy="" filterBy="" filterMatchMode="exact">
-                                            <h:outputText value=""/>
+                                        <p:column style="width:100px" headerText="Capacidad" sortBy="#{rec.capacidad}" filterBy="#{rec.capacidad}" filterMatchMode="exact">
+                                            <h:outputText value="#{rec.capacidad}"/>
                                         </p:column>
 
-                                        <p:column headerText="estado" sortBy="">
-                                            <h:outputText value=""/>
+                                        <p:column style="width:100px" headerText="Disponible" sortBy="#{rec.disponible}">
+                                            <h:outputText value="#{recursoBean.estaDisponible(rec)}"/>
+                                        </p:column>
+                                        
+                                        <p:column style="width:100px" headerText="Averiado" sortBy="#{rec.averiado}">
+                                            <h:outputText value="#{recursoBean.estaAveriado(rec)}"/>
+                                        </p:column>
+                                        
+                                          <p:column style="width:150px" headerText="Averiado" sortBy="#{rec.averiado}">
+                                              <p:commandButton class="btn btn-secondary btn-xs" value="Cambiar" actionListener="#{inicioBean.doLogin}" />
                                         </p:column>
                                     </p:dataTable>
                             </h:form>
