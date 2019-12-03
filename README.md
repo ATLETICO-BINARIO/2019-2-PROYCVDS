@@ -114,54 +114,40 @@ Diagrama de clases (hacerlo mediante ingeniería inversa):
 
 >  #### Para cada Sprint: 
 > * #####  Sprint 1:
->   * ######  Imagen del 'sprint-backlog' 
->		![](ImagenesdelreadMe/er.png)
- 
-Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso 
+>   * ######  Imagen del 'sprint-backlog':
+>		![](ImagenesdelreadMe/sprint1backlog.png)
+>
+>   * ###### Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso:
+>       ![](ImagenesdelreadMe/sprint1burndownchart.png)
+>
+>       Uno de los mayores problemas que tuvimos con este sprint fue que no tuvimos una buena preparacion y falta de comunicacion durante el desarrollo del sprint, esto produjo errores y desorden en el sprint. 
+
+>   * ##### Sprint 2:
+>       * ######  Imagen del 'sprint-backlog':
+>           ![](ImagenesdelreadMe/sprint2backlog.png)
+>
+>       * ###### Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso:
+>           ![](ImagenesdelreadMe/sprint2burndownchart.png)
+>
+>           En este sprint se logro comunicar mas con el equipo, pero teniamos muchos errores del sprint anterior, entonces toco corregir todo y no se logro avanzar en el sprint 
+
+
+>   * ##### Sprint 3:
+>       * ######  Imagen del 'sprint-backlog':
+>           ![](ImagenesdelreadMe/sprint3backlog.png)
+>
+>       * ###### Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso:
+>           ![](ImagenesdelreadMe/sprint3burndownchart.png)
+>
+>           Encontramos problemas con las consultas que estabamos haciendo, y nos toco corregir cosas del anterior sprint 
 
  
 
-Uno de los mayores problemas que tuvimos con este sprint fue que no tuvimos una buena preparacion y falta de comunicacion durante el desarrollo del sprint, esto produjo errores y desorden en el sprint. 
-
- 
-
- 
-
- 
-
-Sprint 2 
-
-Imagen del 'sprint-backlog' 
-
- 
-
-Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso 
-
- 
-
-En este sprint se logro comunicar mas con el equipo, pero teniamos muchos errores del sprint anterior, entonces toco corregir todo y no se logro avanzar en el sprint 
-
-Sprint 3 
-
-Imagen del 'sprint-backlog' 
-
- 
-
-Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso 
-
- 
-
-Encontramos problemas con las consultas que estabamos haciendo, y nos toco corregir cosas del anterior sprint 
-
- 
-
-Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte principal). Para la cobertura, pueden usar los plugins disponibles (EclEmma, Jacoco, etc.) 
-
-Falta 
-
-Reporte de análisis estático de código. Se pueden usar las mismas herramientas trabajadas en los laboratorios. 
-
-Falta 
+> ##### Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte principal). Para la cobertura, pueden usar los plugins disponibles (EclEmma, Jacoco, etc.): 
+> Falta 
+>
+> ##### Reporte de análisis estático de código. Se pueden usar las mismas herramientas trabajadas en los laboratorios. 
+> Falta 
 
  
 
