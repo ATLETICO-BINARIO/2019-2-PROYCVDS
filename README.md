@@ -56,17 +56,18 @@
 
 ### Imágenes y descripción de las funcionalidades más importantes: 
 > ![](ImagenesdelreadMe/restringir.png)
+>
 > Restringir el accesso a las personas sin usuario 
-
-> ![](ImagenesdelreadMe/iniciar.PNG)
+>
+> ![](ImagenesdelreadMe/iniciar.png)
 > Hacer el login y redireccionar segun el tipo de usuario 
-
-> ![](ImagenesdelreadMe/consultar.PNG)
+> 
+> ![](ImagenesdelreadMe/consultar.png)
 > Cunsultar un recurso 
 
  
 ### Arquitectura y Diseño detallado: 
-> ![](ImagenesdelreadMe/er.PNG)
+> ![](ImagenesdelreadMe/er.png)
 >Modelo E-R: 
 
 Diagrama de clases (hacerlo mediante ingeniería inversa): 
