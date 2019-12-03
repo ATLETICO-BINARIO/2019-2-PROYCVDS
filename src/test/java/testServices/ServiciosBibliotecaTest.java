@@ -20,9 +20,13 @@ import java.util.Optional;
 
 import static com.google.inject.Guice.createInjector;
 import edu.eci.cvds.entities.Recurso;
+import edu.eci.cvds.entities.Reserva;
+import edu.eci.cvds.entities.Roll;
+import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.services.BibliotecaServices;
 import edu.eci.cvds.services.BibliotecaServicesFactory;
 import edu.eci.cvds.services.ServicesException;
+import java.util.Date;
 import java.util.List;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -114,7 +118,23 @@ public class ServiciosBibliotecaTest {
 		List<Recurso> recurPrueba = bibliotecaS.filtrarTipo("l");
                 //for(Recurso r:recurPrueba) System.out.println(r);
 		assertTrue (recurPrueba !=null);
-	}        
+	} 
+        
+        @Test
+        public void deberiaInsertarReserva() throws ServicesException {
+            
+                Date fechaIni = new Date(2019,11,3,0,0);
+                Date fechaFin = new Date(2019,11,7,0,0);
+                Date fechaReserva = new Date();
+                
+                List<Recurso> recur = bibliotecaS.recursoPorId(203);
+                Usuario usu = new Usuario(3, "", "", "", new Roll(1,""));
+
+                
+                bibliotecaS.insertReserva(new Reserva(0, usu, recur.get(0),  fechaIni,  fechaFin,  fechaReserva));
+                
+                
+	}  
         
     
 }
