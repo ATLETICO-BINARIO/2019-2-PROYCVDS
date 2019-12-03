@@ -148,7 +148,7 @@ Diagrama de clases (hacerlo mediante ingeniería inversa):
 > Falta 
 >
 > ##### Reporte de análisis estático de código. Se pueden usar las mismas herramientas trabajadas en los laboratorios. 
-> Falta 
+> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d887ba80057c4009a7524103417497e1)](https://www.codacy.com/manual/DavidAndresHerrera/2019-2-PROYCVDS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ATLETICO-BINARIO/2019-2-PROYCVDS&amp;utm_campaign=Badge_Grade)
 
  
 
