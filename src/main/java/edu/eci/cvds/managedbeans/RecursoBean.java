@@ -74,6 +74,7 @@ public class RecursoBean implements Serializable{
         return tipo;
     }
     public void setTipo(String tipo){
+        System.out.println("Seteó Tipo");
         this.tipo = tipo;
     }
     public String getUbicacion(){
@@ -84,6 +85,7 @@ public class RecursoBean implements Serializable{
     }
     public int getId(){
         return id;
+        
     }
     public void setId(int identificador){
         this.id = identificador;
@@ -105,19 +107,17 @@ public class RecursoBean implements Serializable{
         else return "No"; 
     } 
     
-    public void registrarRecurso(){
-        System.out.println("entre a registrar");
+    public void registrarRecurso(String nombre, int id, String ubicacion, int capacidad, String tipo){
         try{
-            
             Recurso recurso = new Recurso(id, true, false, ubicacion, nombre, capacidad, tipo);
-            bibliotecaServices.insertarRecurso(recurso);
+            bibliotecaServices.insertarRecurso(recurso);            
+            System.out.println("Se ha registrado con exito");
         }catch(ServicesException e){
             e.printStackTrace();
             facesError(e.getMessage());
         }
     }
     
-
     public List<Recurso> consultarRecursos(){
         try {
             List<Recurso> recs = bibliotecaServices.consultarRecursos();
@@ -133,7 +133,32 @@ public class RecursoBean implements Serializable{
         }
         
     }
+	
+    public List<Recurso> recursosDisponibles(){
+        try {
+            List<Recurso> recs = bibliotecaServices.recursosDisponibles();
+            System.out.println("Consulta exitosa");
+            return recs;
+        }catch (ServicesException e) {
+            
+            facesError("No se pudo consultar los recursos ");
+            return null;
+        }
+    }    
     
+
+	public void modificarRecurso(Recurso r){
+        System.out.println("Vamos a modificar");
+        try{
+            bibliotecaServices.cambiarEstadoMatenimiento(r.getId());
+        }
+        catch(ServicesException e){
+            facesError("No se pudo modificar el recurso");
+        }
+
+    } 
+
+
     private void facesError(String message) {
         FacesContext.getCurrentInstance().addMessage("Problema al registrar un Recurso: ", new FacesMessage(FacesMessage.SEVERITY_ERROR, message, "se genero un error"));
     }

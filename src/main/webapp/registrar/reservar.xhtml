@@ -4,14 +4,13 @@
 <h:head>
     <!-- Required meta tags-->
     <meta charset="UTF-8"/>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-type" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="Colorlib Templates"/>
     <meta name="author" content="Colorlib"/>
     <meta name="keywords" content="Colorlib Templates"/>
 
     <!-- Title Page-->
-    <title>Consultando Recursos</title>
+    <title>Reservar Recurso</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all"/>
@@ -32,29 +31,27 @@
 <body>
     <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
         <div class="wrapper wrapper--w680">
-            <center>
-                
-                <div class="card-2 card-1" >
-                <div class="card-heading "></div>
-                <div class="card-body" >
-                    <h2 class="title">Consultar Recursos</h2>
-                   
-                    <div class="container">
+            <div class="card-2 card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Reservar Recursos</h2>
+                    
+                        <div class="container">
                         <center>
                             <h:form id="form">
-                                    <p:dataTable id="recursosTable" value="#{recursoBean.consultarRecursos()}" var="rec" widgetVar="recTable"
+                                    <p:dataTable id="recursosTable" value="#{recursoBean.recursosDisponibles()}" var="rec" widgetVar="recTable"
                                                  rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                                  sortMode="multiple" paginatorPosition="bottom">
                                         
                                         
-                                        <p:column style="width:100px" headerText="Id" >
+                                        <p:column style="width:100px" headerText="Id" sortBy="#{rec.id}">
                                             <h:outputText value="#{rec.id}"/>
                                         </p:column>
                                         <p:column  style="width:100px " headerText="Tipo" sortBy="" filterMatchMode="exact" filterBy="#{recursoBean.tipo}">
                                             <h:outputText value="#{rec.tipo}"/>
 
                                         </p:column>
-                                        <p:column style="width:100px" headerText="Nombre">
+                                        <p:column style="width:100px" headerText="Nombre" >
                                             <h:outputText value="#{rec.nombre}"/>
                                         </p:column>
                                         <p:column style="width:100px" headerText="Ubicacion" sortBy="#{rec.ubicacion}" filterBy="#{rec.ubicacion}" filterMatchMode="exact">
@@ -64,18 +61,21 @@
                                             <h:outputText value="#{rec.capacidad}"/>
                                         </p:column>
 
-                                        <p:column style="width:100px" headerText="Disponible" sortBy="#{rec.disponible}">
+                                        <p:column style="width:100px" headerText="Disponible" >
                                             <h:outputText value="#{recursoBean.estaDisponible(rec)}"/>
+                                        </p:column>
+                                          <p:column style="width:150px" headerText="" >
+                                              <p:commandButton class="btn btn-secondary btn-xs" value="Reservar"  />
                                         </p:column>
                                     </p:dataTable>
                             </h:form>
                         </center>
                     </div>
+                        
+                        
+                    
                 </div>
             </div>
-                
-            </center>
-            
         </div>
     </div>
 
