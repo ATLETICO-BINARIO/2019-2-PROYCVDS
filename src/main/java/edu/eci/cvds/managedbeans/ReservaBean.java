@@ -126,7 +126,7 @@ public class ReservaBean implements Serializable{
  
     }
     public void registrarReserva(){
-        bibliotecaServices.consultarRecursos();
+        
     }
     
     public Date horaFin(int horas){  
